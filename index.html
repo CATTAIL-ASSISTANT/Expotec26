@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATTAIL ASSISTANT - Robot de Asistencia para TDAH</title>
+    <style>
+        :root {
+            --primary-color: #d90429;
+            --secondary-color: #2b2d42;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #ef233c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #8d99ae;
+        }
+
+        .authors-badge {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Estilos de la Galería de Imágenes */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Estilos de la Galería de Videos */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .video-container iframe, 
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--secondary-color);
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CATTAIL ASSISTANT</h1>
+        <p>Robot de asistencia para personas con déficit de atención (TDAH)</p>
+        <div class="authors-badge">
+            Autores: Mauricio Montiel, Alejandro Muñoz, Thiago Yegros | 3° Mecatrónica - Salesianito
+        </div>
+    </header>
+
+    <nav>
+        <a href="#antecedentes">Antecedentes</a>
+        <a href="#imagenes">Imágenes / Prototipo</a>
+        <a href="#videos">Demostración / Videos</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- SECCIÓN: ANTECEDENTES DEL PROYECTO -->
+        <section id="antecedentes">
+            <h2>Antecedentes e Información del Proyecto</h2>
+            <p>
+                <strong>Planteamiento del problema:</strong> Las personas con Trastorno por Déficit de Atención e Hiperactividad (TDAH) o tendencias al olvido recurrente se enfrentan diariamente a la dificultad de mantener el seguimiento de medicamentos, citas médicas y tareas escolares. Las aplicaciones móviles de calendario resultan insuficientes por la sobrecarga informativa y la falta de estímulos físicos que interrumpan la hiperfocalización o distracción.
+            </p>
+            <p>
+                <strong>Propuesta y Función Principal:</strong> CATTAIL ASSISTANT es un robot asistente físico programable diseñado bajo el concepto <em>"Beacon" (Faro)</em>. A través de un modo de ultra bajo consumo (<em>Deep Sleep</em>), se mantiene en reposo hasta que un módulo de Reloj en Tiempo Real (RTC DS3231) envía una interrupción por hardware. En ese instante, el robot avanza aproximadamente 30 cm, activa luces y alertas sonoras, y luego regresa de forma autónoma a su posición inicial sin saturar al usuario ni chocar.
+            </p>
+            <p>
+                <strong>Sistemas y Componentes Principales:</strong>
+            </p>
+            <ul>
+                <li><strong>Controlador:</strong> Placa de desarrollo ESP32 / Raspberry Pi Pico.</li>
+                <li><strong>Propulsión:</strong> Servomotores GS90 sobre chasis con sistema de orugas.</li>
+                <li><strong>Sensores:</strong> Sensor ultrasónico HC-SR04 para detección de obstáculos.</li>
+                <li><strong>Software:</strong> Aplicación multiplataforma (Android y Windows) para programación de alertas.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN: IMÁGENES -->
+        <section id="imagenes">
+            <h2>Galería de Antecedentes e Imágenes del Prototipo</h2>
+            <div class="grid-gallery">
+
+                <div class="card">
+                    <!-- Reemplazar src por la ruta real de tu imagen -->
+                    <img src="https://via.placeholder.com/400x250?text=Chasis+y+Orugas" alt="Chasis del Robot">
+                    <div class="card-body">
+                        <h3>Sistema de Propulsión</h3>
+                        <p>Chasis en miniatura con sistema de orugas para superar obstáculos del hogar como cables y alfombras delgadas.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250?text=Placa+ESP32+y+RTC" alt="Electrónica Interna">
+                    <div class="card-body">
+                        <h3>Unidad de Control y Reloj RTC</h3>
+                        <p>Integración de placa ESP32 con módulo RTC DS3231 para el control de precisión horaria e interrupción por hardware.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250?text=Aplicacion+Multiplataforma" alt="Aplicación App">
+                    <div class="card-body">
+                        <h3>Aplicación Android / Windows</h3>
+                        <p>Interfaz de software desarrollada para cargar y sincronizar los recordatorios con el robot vía Wi-Fi o Bluetooth.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: VIDEOS -->
+        <section id="videos">
+            <h2>Demostraciones en Video</h2>
+            <div class="video-grid">
+
+                <div class="card">
+                    <div class="video-container">
+                        <!-- Ejemplo embedding de YouTube o enlace directo video MP4 (reemplazar la URL) -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de movimiento Beacon" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h3>Modo Beacon y Desplazamiento</h3>
+                        <p>Demostración de avance de 30 cm al sonar la alarma y regreso automático a la base.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Prueba de integración App" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h3>Sincronización con App</h3>
+                        <p>Prueba de envío de un aviso desde la aplicación en Windows/Android hacia la placa del robot.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Colegio y Escuela Técnica Sagrado Corazón de Jesús (Salesianito) — EXPOTEC 2026</p>
+        <p>Asunción, Paraguay</p>
+    </footer>
+
+</body>
+</html>
